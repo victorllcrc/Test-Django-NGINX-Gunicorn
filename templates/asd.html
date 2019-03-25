@@ -1,0 +1,145 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+
+<div class="container">
+
+    <form method="post" action="">{% csrf_token %}
+
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <br>
+                <label >Documento de Identidad (DNI):</label>
+                {{ form2|crispy }}
+                <br>
+                <button class="btn btn-info" type="submit">Buscar alumno</button>
+
+            </div>
+
+        </div>
+
+
+    </form>
+
+    <form  method="post" action="" >
+        <div class="row">
+            <div class="col-8">
+
+
+                <br>
+                <br>
+                <input class="form-control" type="text" placeholder="" readonly value="{{ alumno.nombre }}">
+                 <label>Generar certificado de estudios del:</label>
+                <br>
+                <br>
+                <br>
+                <span class="row justify-content-center">CERTIFICADO ANUAL DE ESTUDIOS</span>
+                <br>
+
+                <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                 <span class="input-group-text">Región</span>
+                </div>
+                <input value="{{ alumno.region }}" disabled="disabled" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                 <span class="input-group-text">Provincia</span>
+                </div>
+                <input value="{{ alumno.provincia }}" disabled="disabled" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                 <span class="input-group-text">AÑO ESCOLAR</span>
+                </div>
+                <input value="{{ alumno.ano_escola }}" disabled="disabled" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <br>
+
+
+                <!-- Botones desplegables
+                <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+                </div>
+                <br>
+                -->
+
+
+
+                <!-- SELECT OPCION 2-->
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+
+                        <label for="inputState"><strong>SELECCIONA EL AÑO ESCOLAR</strong></label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Seleccione la opción</option>
+                            <option>1°grado primaria</option>
+                            <option>2°grado primaria</option>
+                            <option>3°grado primaria</option>
+                            <option>4°grado primaria</option>
+                            <option>5°grado primaria</option>
+                            <option>6°grado primaria</option>
+                            <option>1°grado secundaria</option>
+                            <option>2°grado secundaria</option>
+                            <option>3°grado secundaria</option>
+                            <option>4°grado secundaria</option>
+                            <option>5°grado secundaria</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <span class="row justify-content-center">INSTITUCIÓN EDUCATIVA: {{ alumno.inst_edu }} </span>
+                <br>
+                <span class="row justify-content-start">Reconocido oficialmente por el Ministerio de Educacion del Perú
+                según RES.REC N° 457 del año 2015 otorga el presente certificado de calificaciones anuales y situacion final a {{ alumno.nombre }}
+                  de acuerdo al plan y programas de estudios aprobados por decretos y reglamentos de evaluación.</span>
+                <br>
+                <br>
+                <table class="table table-bordered table-hover">
+                    <tr class="info">
+                        <th>ASIGNATURA</th>
+                        <th> Nota Número</th>
+                        <th>Nota Letra</th>
+                    </tr>
+
+
+                    <tr>
+                        <td>{{ alumno.asignatura }}</td>
+                        <td>{{ alumno.nota_num }}</td>
+                        <td>{{ alumno.nota_char }}</td>
+                    </tr>
+
+                </table>
+
+
+
+
+
+
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>

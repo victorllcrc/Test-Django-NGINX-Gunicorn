@@ -1,0 +1,102 @@
+{% extends "base.html" %}   <!-- herencia de plantillas -->
+{% load crispy_forms_tags %} <!-- enlace para reconocer el crispyForm-->
+{% block jumbotrola %}
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+        <a class="btn btn-lg btn-primary" href="login" role="button">View navbar docs &raquo;</a>
+    </div>
+{% endblock %}
+
+<h1>Por fin haces que algo funcione ctv:</h1>
+<h1>Ahora deja llorar y sigue programando :"v </h1>
+<h1>Ya que este proyecto no se va levantar solo </h1>
+<h1>Y tu equipo es una mierda .... con quienes te juntas tambien ps</h1>
+
+{{ titulo }}<br/>
+{{ request.user }}<br/>
+<hr/>
+<br/>
+
+{% block content %}
+
+<form method="POST" action="">{% csrf_token %}
+    <div class="row">
+        <div class=" col-3">
+            <br>
+            {{ el_form|crispy }}
+            <input type='submit' value='Registrar'/>
+        </div>
+
+        <div class="col-4">
+            <br>
+            <iframe src="https://open.spotify.com/embed/track/0XTRycTWH8TR2xBEjwByNS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+        <div class="col-4">
+            <br>
+            <iframe src="https://open.spotify.com/embed/track/1BLfQ6dPXmuDrFmbdfW7Jl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <iframe src="https://open.spotify.com/embed/track/6bPFofCcS5XVgGWqcjcGrn" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://open.spotify.com/embed/track/32OlwWuMpZ6b0aN2RZOeMS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://open.spotify.com/embed/track/5kqIPrATaCc2LqxVWzQGbk" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                       <iframe src="https://open.spotify.com/embed/album/4rFrdkSWs0dtj0rWPzOk1v" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                       <iframe src="https://open.spotify.com/embed/user/chillhopmusic/playlist/74sUjcvpGfdOvCHvgzNEDO" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXbuvTm9NMIGt" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+{% endblock %}
